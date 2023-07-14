@@ -2,6 +2,9 @@
 
 Notepad is an editor for you to organize your life! There you will be able to create a file and write your text in the editor, if you don't like the name of the file you can edit it or maybe delete the file, in the editor I used the jodit-react library you can see more about [here] (https://www.npmjs.com/package/jodit-react).
 
+![image](https://github.com/anndross/Notepad/assets/132636167/a59ebdd0-32f9-4c77-8acf-e170b1659430)
+![image](https://github.com/anndross/Notepad/assets/132636167/29a714e4-210b-421e-a2ed-899719911b2e)
+
 ### Features
 
 - File creation
