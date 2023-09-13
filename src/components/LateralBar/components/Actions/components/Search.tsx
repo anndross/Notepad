@@ -58,10 +58,10 @@ export const Search = () => {
                 }}
                 className="flex justify-between mb-5 h-8 w-full cursor-pointer"
               >
-                <span>
+                <span className="text-gray-900">
                   {item.name}
                 </span>
-                <span>
+                <span className="text-gray-900">
                   {format(new Date(item.date), 'dd/MM/yyyy')}
                 </span>
               </li>

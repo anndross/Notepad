@@ -1,5 +1,5 @@
-import { connectMongoDB } from "../db/MongoConnect"
-import Folder from "../models/folder.model"
+import { connectMongoDB } from "../../db/MongoConnect"
+import Folder from "../../models/folder.model"
 
 export default async function handler(req, res) {
   const { folder } = req.body

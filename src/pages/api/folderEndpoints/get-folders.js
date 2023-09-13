@@ -1,5 +1,5 @@
-import { connectMongoDB } from "../db/MongoConnect"
-import Folder from "../models/folder.model"
+import { connectMongoDB } from "../../db/MongoConnect"
+import Folder from "../../models/folder.model"
 import { v4 as uuid } from "uuid"
 
 export default async function handler(req, res) {

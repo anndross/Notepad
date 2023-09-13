@@ -8,7 +8,8 @@ import { Controller, useForm } from "react-hook-form"
 import { AiOutlinePlus } from "react-icons/ai";
 import * as yup from "yup";
 import { v4 as uuid } from 'uuid'
-const schema = yup.object({
+
+const setNewTaskSchema = yup.object({
   name: yup.string().required('O nome é obrigatório'),
 })
 
@@ -16,7 +17,7 @@ export const CreateFolder = () => {
   const { folderData, setFolderData } = useContext(FolderContext)
 
   const { handleSubmit, control, formState: { errors } } = useForm({
-    resolver: yupResolver(schema)
+    resolver: yupResolver(setNewTaskSchema)
   })
 
   const SetNewTask = (values: any) => {
@@ -34,7 +35,7 @@ export const CreateFolder = () => {
 
   return (
     <div className='w-full'>
-      <h1>
+      <h1 className="text-gray-900">
         Adicionar nova task
       </h1>
       <div className={`my-5 h-10 gap-2 ${errors.name?.message && 'mb-8'}`}>
@@ -47,21 +48,18 @@ export const CreateFolder = () => {
               <Input
                 type='text'
                 {...field}
-                error={errors.name?.message ? true : false}
+                error={errors.name}
                 placeholder='Nome'
               />
             }
           />
-          <span className="text-red-600 text-sm">
-            {errors.name?.message}
-          </span>
         </div>
       </div>
-      <div className='w-full '>
+      <div className='w-full'>
         <Button
           onClick={handleSubmit(SetNewTask)}
         >
-          <div className="p-2 flex items-center gap-3">
+          <div className="p-2 flex items-center gap-3 text-gray-100">
             <AiOutlinePlus />
             criar nova task
           </div>

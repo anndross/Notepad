@@ -8,7 +8,7 @@ export const Folders = () => {
   const { folderData } = useContext(FolderContext)
 
   return (
-    <div>
+    <div className="h-full">
       <Filters />
       <div className='flex flex-col gap-2 my-6 overflow-y-auto h-full'>
         {folderData.map((item, i) => {

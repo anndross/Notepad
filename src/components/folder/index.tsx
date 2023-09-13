@@ -58,12 +58,12 @@ export const Folder = ({ data }: Props) => {
           value={editedName}
           onChange={e => setEditedName(e.target.value)}
         /> :
-        <span>
+        <span className='text-gray-900'>
           {data.name}
         </span>
       }
       <div className='flex items-center justify-end gap-4'>
-        <span>{format(new Date(data.date), 'dd/MM/yyyy')}</span>
+        <span className='text-gray-900'>{format(new Date(data.date), 'dd/MM/yyyy')}</span>
         <>
           {
             canEdit ?
@@ -72,13 +72,14 @@ export const Folder = ({ data }: Props) => {
                   setCanEdit(!canEdit)
                   onEdit()
                 }}
-                className='cursor-pointer hover:bg-stone-400 p-[2px] rounded-sm'
+                className='cursor-pointer text-gray-900 hover:bg-stone-400 p-[2px] rounded-sm'
                 size={24}
+
               />
               :
               <BiEditAlt
                 onClick={() => setCanEdit(!canEdit)}
-                className='cursor-pointer hover:bg-stone-400 p-[2px] rounded-sm'
+                className='cursor-pointer text-gray-900 hover:bg-stone-400 p-[2px] rounded-sm'
                 size={24}
               />
           }
@@ -87,7 +88,7 @@ export const Folder = ({ data }: Props) => {
               onDelete()
             }}
             size={24}
-            className='cursor-pointer hover:bg-stone-400 p-[2px] rounded-sm'
+            className='cursor-pointer text-gray-900 hover:bg-stone-400 p-[2px] rounded-sm'
           />
         </>
       </div>

@@ -28,7 +28,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/pages/api/set-folder.js"
+    "src/pages/api/folderEndpoints/create-folder.js"
   ],
   "exclude": ["node_modules"]
 }

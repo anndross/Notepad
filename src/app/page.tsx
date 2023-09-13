@@ -1,7 +1,7 @@
 "use client";
 import { Editor } from '@/components/Editor'
 import { LateralBar } from '@/components/LateralBar'
-import { useEffect, useState } from 'react';
+import { LegacyRef, useEffect, useRef, useState } from 'react';
 import { FolderContext } from './context';
 import axios from 'axios';
 import { NoEditor } from '@/components/NoEditor';
@@ -35,19 +35,18 @@ export default function Home() {
     setSelectedFolder(firstFolder)
   }, [folderData])
 
+  const ref = useRef(null) as any
 
   return (
     <FolderContext.Provider value={{ folderData, setFolderData, selectedFolder, setSelectedFolder }}>
-      <Head>
-        <link rel="icon" href="/favicon.jpg" />
-      </Head>
-      <div className={`h-screen grid grid-cols-[calc(24%-3.5rem)_minmax(76%,_1fr)] grid-rows-1 gap-14 p-5 w-screen`}>
-        <LateralBar />
-        {folderData.length ?
-
-          <Editor />
-          : <NoEditor />
-        }
+      <div className={`h-screen p-4 w-screen`}>
+        <div ref={ref} className={`h-full  max-[700px]:pl-16 flex gap-4 w-full relative`}>
+          <LateralBar />
+          {folderData.length ?
+            <Editor height={ref.current?.clientHeight} />
+            : <NoEditor />
+          }
+        </div>
       </div>
     </FolderContext.Provider>
 

@@ -26,10 +26,10 @@ export const Filters = () => {
 
   return (
     <div className='w-full gap-2 items-center grid grid-cols-[calc(60%-0.5rem)_minmax(40%,_1fr)]'>
-      <span>Lista de afazeres</span>
+      <span className="text-gray-900">Lista de afazeres</span>
       <DropDown>
-        <button onClick={sortByLatest}>Mais recente</button>
-        <button onClick={sortByOldest}>Mais antigo</button>
+        <button onClick={sortByLatest} className="text-gray-900">Mais recente</button>
+        <button onClick={sortByOldest} className="text-gray-900">Mais antigo</button>
       </DropDown>
     </div>
   )

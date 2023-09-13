@@ -18,10 +18,10 @@ export const Modal = ({ children, showModal, setShowModal }: Props) => {
   return (
     <>
       {showModal &&
-        <div className="absolute z-40 h-screen top-0 left-0 w-full bg-[#29292984]">
+        <div className="absolute z-[1000] h-screen top-0 p-4 left-0 w-screen bg-[#29292984]">
           <div
             ref={ref}
-            className="absolute top-28 left-2/4 -translate-x-2/4 h-1/2 w-1/5 bg-white shadow-inner rounded-md z-50"
+            className="absolute top-28 left-2/4 -translate-x-2/4 h-1/2 w-96 bg-white shadow-inner rounded-md z-50"
           >
             <div className="w-full rounded-t-md flex justify-end p-3">
               <GrClose
